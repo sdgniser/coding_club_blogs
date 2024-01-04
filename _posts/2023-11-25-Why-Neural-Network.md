@@ -1,9 +1,9 @@
 ---
 layout: post
 title:  "Why Neural Network"
-date:   2023-11-22 
+date:   2023-11-25 
 categories: jekyll update
-
+author: 'Shriman Keshri'
 ---
 
 # Neural Networks and ReLU
