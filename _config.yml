@@ -24,7 +24,7 @@ description: >- # this means to ignore newlines until "baseurl:"
   Welcome to Coding Club Blogs! Dive into coding insights, tutorials,
   and documented talks. Stay updated with the latest tech discussions
   from our coding club. Happy coding!
-baseurl: "coding_club_blogs" # the subpath of your site, e.g. /blog
+baseurl: "/coding_club_blogs" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  sdgniser
@@ -53,3 +53,10 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true

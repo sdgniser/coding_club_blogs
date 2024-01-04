@@ -1,0 +1,361 @@
+
+
+
+# Talk on Markdown (which is itself written in Markdown)
+
+&emsp; Markdown is a lightweight markup language created by John Gruber and Aaron Swartz in 2004, designed to be easy to read and write, with a plain-text format that can be converted into structurally valid HTML. It simplifies the process of formatting plain text, providing a straightforward and human-readable way to create rich documents without the complexities of traditional word processors. Its simplicity and versatility have made Markdown a widely adopted **standard for writing content across various platforms**.
+
+<!-- A markup language is a system for annotating a document in a way that is syntactically distinguishable from the text. It uses tags or codes to define elements and their attributes within the document, providing instructions on how the content should be displayed or processed. Examples of markup languages include HTML, XML, LaTeX, and Markdown. -->
+
+Here are some places you can use Markdown to write content:
+
+- `README.md` files on GitHub/GitLab repositories. Issues, comments, and pull requests on GitHub/GitLab repositories also support Markdown formatting.
+- [Jupyter Notebook](https://jupyter.org/) Markdown cells.
+- Chat Applications like [Slack](https://slack.com/), [Discord](https://discord.com/) support Markdown formatting in messages. [Reddit](https://www.reddit.com/) and [Stackoverflow](https://stackoverflow.com/) also support Markdown formatting in questions, posts and comments.
+- ChatGPT writes all its responses in Markdown.
+- Markdown at it's core is nothing but a javascript library. Hence it is really easy to convert to HTML/PDF etc.
+- Majority of all documentation for open source projects is written in Markdown.
+- Specific Purpose Markdown Utilities:
+  - [**Jekyll**](https://jekyllrb.com/) is a static site generator that uses Markdown for content. It blends really well with GitHub Pages so you can host your own website for free. It is widely used by bloggers and developers to create static websites. It makes it really easy for bloggers to concentrate more on the content and less on the design. We will learn about this in future sessions.
+  - [**Marp**](https://marp.app/) (MARkdown Presentations) is a tool to make beautiful slide decks using Markdown. It helps in making professional looking presentations really fast. We will have future sessions on this as well.
+  - [**Mermaid**](https://mermaid-js.github.io/mermaid/#/) is a tool to create diagrams and flowcharts using Markdown. It is really easy to use and can be used to create diagrams and flowcharts in no time. We will try to have future sessions on this too.
+
+## Table of Contents
+- [Talk on Markdown (which is itself written in Markdown)](#talk-on-markdown-which-is-itself-written-in-markdown)
+	- [Table of Contents](#table-of-contents)
+	- [Markdown Syntax](#markdown-syntax)
+		- [Headings](#headings)
+		- [Paragraphs](#paragraphs)
+		- [Text Formatting](#text-formatting)
+		- [Lists](#lists)
+			- [Ordered Lists](#ordered-lists)
+			- [Unordered Lists](#unordered-lists)
+			- [Nested lists](#nested-lists)
+		- [Links](#links)
+		- [Images](#images)
+		- [Block Quotes](#block-quotes)
+		- [Code and Syntax Highlighting](#code-and-syntax-highlighting)
+			- [No language specified:](#no-language-specified)
+			- [Python Example:](#python-example)
+			- [Java Example:](#java-example)
+			- [C++ Example:](#c-example)
+		- [Tables](#tables)
+			- [Basic Table:](#basic-table)
+			- [Middle Aligned Table:](#middle-aligned-table)
+			- [Less Well-Formatted Table:](#less-well-formatted-table)
+		- [LaTeX Equations in Markdown](#latex-equations-in-markdown)
+			- [Inline Equations:](#inline-equations)
+			- [Display Equations:](#display-equations)
+		- [Inline HTML](#inline-html)
+			- [Horizontal Rule (`<hr>` tag):](#horizontal-rule-hr-tag)
+			- [Styled Button Example:](#styled-button-example)
+
+
+
+## Markdown Syntax
+
+Now we will learn about the syntax of Markdown.
+
+
+### Headings
+```
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+```
+
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+### Paragraphs
+
+```
+This is a paragraph. It is separated from the next paragraph by a blank line. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci quam, congue ut est ac, sagittis vestibulum nulla. Integer ac.
+```
+
+This is a paragraph. It is separated from the next paragraph by a blank line. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus orci quam, congue ut est ac, sagittis vestibulum nulla. Integer ac.
+
+### Text Formatting
+
+```
+This is how we do **bold**, *italic*, ~~strikethrough~~, and ***bold italic*** text.
+```
+
+This is how we do **bold**, *italic*, ~~strikethrough~~, and ***bold italic*** text.
+
+### Lists
+
+#### Ordered Lists
+
+```
+01. First Item
+02. Second Item
+01. Rendering is done with correct numbering although I have put wrong numbering.
+296. some other ordered point
+```
+
+1. First Item
+2. Second Item
+1. Rendering is done with correct numbering although I have put wrong numbering.
+296. some other ordered point
+
+#### Unordered Lists
+
+we can either use `*`, `+` or `-` to create unordered lists. I prefer using `-`.
+
+```
+- First Item
+- Second Item
+- Third Item
+```
+
+- First Item
+- Second Item
+- Third Item
+
+#### Nested lists
+
+We can nest lists by indenting the sub items. Nesting ordered lists inside unordered lists and vice versa is also possible.
+
+```
+- First Item
+  - First Sub Item
+  - Second Sub Item
+
+1. First Item
+   - First Sub Item
+   - Second Sub Item
+```
+
+
+- First Item
+  - First Sub Item
+  - Second Sub Item
+
+1. First Item
+   - First Sub Item
+   - Second Sub Item
+
+### Links
+
+```
+[This is a link to Google](https://www.google.com/)
+[This is a link to Google which says "Google" upon hovering](https://www.google.com/ "Google")
+[Relative links also work](../README.md)
+```
+
+[This is a link to Google](https://www.google.com/)
+[This is a link to Google which says "Google" upon hovering](https://www.google.com/ "Google")
+[Relative links also work](../README.md)
+
+
+### Images
+
+```
+![This is an image from an URL](https://picsum.photos/200/300)
+![This is an image from an URL](image.jpg)
+```
+
+![This is an image from an URL](https://picsum.photos/536/354)
+![This is an image from an URL](image.jpg)
+
+
+### Block Quotes
+
+```
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote. 
+```
+
+> This is a very long line that will still be quoted properly when it wraps. Oh boy let's keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can *put* **Markdown** into a blockquote.
+
+### Code and Syntax Highlighting
+
+Markdown supports code and syntax highlighting, enhancing the readability of your programming examples. To denote inline code, wrap the code snippet with a pair of backticks (`). For instance:
+
+```
+Inline code examples: `var x = 10;` or `print("Hello, World!");`
+```
+
+Inline code examples: `var x = 10;` or `print("Hello, World!");`
+
+Now, for multi-line code blocks, use triple backticks (```). Specify the language after the opening triple backticks for syntax highlighting. For a comprehensive list of supported languages for syntax highlighting, you can refer to [this link](https://github.com/jincheng9/markdown_supported_languages). Here are examples in Python, Java, and C/C++:
+
+#### No language specified:
+
+```
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Markdown")
+```
+
+#### Python Example:
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+greet("Markdown")
+```
+
+#### Java Example:
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+#### C++ Example:
+
+```cpp
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, Markdown!" << std::endl;
+    return 0;
+}
+```
+
+### Tables
+
+Markdown allows you to create simple tables to organize data in a tabular format. The basic syntax for a table consists of pipes (`|`) to delineate columns and hyphens (`-`) to separate the header row from the content.
+
+#### Basic Table:
+
+```markdown
+| Name   | Age | Occupation    |
+|--------|-----|---------------|
+| Alice  | 28  | Web Developer |
+| Bob    | 32  | Data Analyst  |
+| Carol  | 25  | Designer      |
+```
+
+This renders as:
+
+| Name   | Age | Occupation    |
+|--------|-----|---------------|
+| Alice  | 28  | Web Developer |
+| Bob    | 32  | Data Analyst  |
+| Carol  | 25  | Designer      |
+
+#### Middle Aligned Table:
+
+You can also align the content within the columns, such as center-aligning the numeric values:
+
+```markdown
+| Name   | Age | Occupation      |
+|:------:|:---:|:---------------:|
+| Alice  | 28  | Web Developer   |
+| Bob    | 32  | Data Analyst    |
+| Carol  | 25  | Designer        |
+```
+
+This renders as:
+
+| Name   | Age | Occupation      |
+|:------:|:---:|:---------------:|
+| Alice  | 28  | Web Developer   |
+| Bob    | 32  | Data Analyst    |
+| Carol  | 25  | Designer        |
+
+#### Less Well-Formatted Table:
+
+Even a minimal separator (`---`) between the header and content rows can create a table:
+
+```markdown
+|Name|Age|Occupation
+|---|---|---
+|Alice|28|Web Developer
+|Bob|32|Data Analyst
+|Carol|25|Designer
+```
+
+This renders as:
+
+|Name|Age|Occupation
+|---|---|---
+|Alice|28|Web Developer
+|Bob|32|Data Analyst
+|Carol|25|Designer
+
+While the last example lacks visual separation, it is still rendered correctly.
+
+### LaTeX Equations in Markdown
+
+Markdown supports the inclusion of LaTeX equations, allowing you to seamlessly integrate mathematical expressions into your documents. To incorporate LaTeX equations, use the following syntax:
+
+#### Inline Equations:
+
+Enclose the LaTeX code within a pair of dollar signs (`$`) for inline equations. For example:
+
+```markdown
+The quadratic formula is $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$.
+```
+
+This renders as:
+
+The quadratic formula is \(x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}\).
+
+#### Display Equations:
+
+For standalone, centered equations, use double dollar signs (`$$`). Here's an example:
+
+```markdown
+$$
+\int_{0}^{\infty} e^{-x^2} \,dx = \frac{\sqrt{\pi}}{2}
+$$
+```
+
+This renders as:
+
+$$
+\int_{0}^{\infty} e^{-x^2} \,dx = \frac{\sqrt{\pi}}{2}
+$$
+
+Markdown will then convert the LaTeX code into beautifully formatted mathematical expressions, providing a seamless way to incorporate complex equations into your documents.
+
+### Inline HTML
+
+Markdown allows the incorporation of HTML elements for more intricate styling or specific functionalities. Here are a couple of examples:
+
+#### Horizontal Rule (`<hr>` tag):
+
+You can use the `<hr>` tag to insert a horizontal rule:
+
+```markdown
+Some content above the rule.
+
+<hr>
+
+Content below the rule.
+```
+
+Some content above the rule.
+
+<hr>
+
+Content below the rule.
+
+#### Styled Button Example:
+
+You can also embed more complex HTML elements, like creating a rounded corner blue button:
+
+```markdown
+<button style="border-radius: 5px; background-color: blue; color: white; padding: 8px 16px; cursor: pointer;">
+  Click Me
+</button>
+```
+
+<button style="border-radius: 5px; background-color: blue; color: white; padding: 8px 16px; cursor: pointer;">
+  Click Me
+</button>
