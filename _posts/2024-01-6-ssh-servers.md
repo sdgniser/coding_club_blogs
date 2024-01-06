@@ -1,9 +1,10 @@
 ---
 layout: post
 title:  "Remote Devlopment on SSH Servers"
-date:   2024-01-06 
+date:   2024-01-06 18:00:00
 categories: jekyll update
 author: 'Sagar Prakash Barad'
+future: true
 ---
 
 In an era where the landscape of remote development is no longer exclusive to large corporations, SSH servers have emerged as indispensable tools for a broader audience, particularly in academia. As researchers undertake increasingly complex projects, the demand for substantial computational power becomes more pronounced—whether for analyzing vast datasets or conducting resource-intensive simulations. SSH servers, or Secure Shell servers, are used to provide secure and encrypted access to remote servers. Beyond just connecting, SSH helps users handle server resources, work with files, and run commands from a distance. In response to the growing demand for remote access, data security, and efficient resource use, SSH servers have become vital. They offer a safe and centralized space for coding, modeling, and collaborative work.
