@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "<img src='{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg' alt='Git Icon' width=64 height=64> Git & GitHub: An Invitation to Version Control"
+title:  "<img src='{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg' alt='Git Icon'> Git & GitHub: An Invitation to Version Control"
 date:   2024-01-12 18:00:00 +0530
 categories: jekyll update
 author: 'Jyotirmaya Shivottam'
@@ -91,12 +91,13 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
   - [`git <subcommand> --dry-run`](#git-subcommand---dry-run)
 - [References](#references)
 
+
 ## Some Preliminaries
 ### Version Control Systems and why we need them?
 * In "Version Control Systems" (VCS), "Version" refers to a specific state of the codebase at a given point in time, and "Control" refers to the ability to manage changes to the codebase's state over time. VCS are also called **Source Control Systems**.
 * VCS store <span class="marked">snapshots</span> of your codebase ($\equiv$ codebse's state) at different points in time. Through these snapshots, they let you <span class="marked">compare changes</span> to files.
 * They also allow you to <span class="marked">revert files / entire projects back to any state</span>, thereby preventing you from losing your work, e.g., if you make a mistake in your code or accidentally delete something.
-* For CS460, since you'll be working in groups, VCS will help you <span class="marked">collaborate</span> with your groupmates.
+* For CS460, since you'll be working in groups, VCS will help you <span class="marked">collaborate</span> with your group-mates.
 
 
 ### What are Git & GitHub?
@@ -332,13 +333,13 @@ The following sections contain some additional information, that you might find 
 * On a terminal:
     `git <subcommand> --help` $\equiv$ `git help <subcommand>`, e.g., `git commit --help`.
 * On the web:
-  * Git Documentation: https://git-scm.com/docs
-  * GitHub Documentation: https://docs.github.com/en
-  * StackOverflow: https://stackoverflow.com/questions/tagged/git
-  * ChatGPT: https://chat.openai.com/
+  * Git Documentation: [https://git-scm.com/docs](https://git-scm.com/docs)
+  * GitHub Documentation: [https://docs.github.com/en](https://docs.github.com/en)
+  * StackOverflow: [https://stackoverflow.com/questions/tagged/git](https://stackoverflow.com/questions/tagged/git)
+  * ChatGPT: [https://chat.openai.com/](https://chat.openai.com/)
 ChatGPT is listed at the bottom, because it is not a reliable source of information. Always double-check any information you get from ChatGPT, especially when it comes to running commands on your computer. That said, it does usually point you in the right direction.
 * Some repos to practice git:
-  * https://github.com/firstcontributions/first-contributions
+  * [https://github.com/firstcontributions/first-contributions](https://github.com/firstcontributions/first-contributions)
   * <span class="tip">Tip:</span> <span class="tip-text">Create a repo on your GitHub account and play around with it.</span>
 
 
