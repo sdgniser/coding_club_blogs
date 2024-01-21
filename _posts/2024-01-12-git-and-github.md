@@ -19,10 +19,9 @@ author: 'Jyotirmaya Shivottam'
       letter-spacing: 0.015em;
     }
 
-    h2 img {
+    img.teaser {
       position: relative;
-      top: 0.15em;
-      left: 0.1em;
+      margin: 2em auto;
     }
 
     span.marked {
@@ -37,15 +36,15 @@ author: 'Jyotirmaya Shivottam'
     }
 
     span.tip-text {
-      color: #f2fc0f; /* dark mode color */
-      color: #f2fc0f; /* light mode color */
+      /* color: #f2fc0f; */ /* dark mode color */
+      color: #29cd00; /* light mode color */
       font-weight: 600;
       font-style: italic;
     }
 </style>
 
 <div style="text-align: center;">
-<img src="{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg" width=48 height=48>
+<img class="teaser" src="{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg" width=72 height=72>
 </div>
 
 This blogpost is a slightly expanded conversion of a talk, I gave to the students of CS460/CS660 at NISER, Bhubaneswar, on January 12, 2024. It is a tutorial-style introduction to Git & GitHub, and how to use them for version control. The sections are delineated to be easily navigable. This blogpost / talk is meant for beginners, and assumes no prior knowledge of Git or GitHub. It is also meant to be interactive, so that the readers can follow along and try out the `git` commands themselves.
