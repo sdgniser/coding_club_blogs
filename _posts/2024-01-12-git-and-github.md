@@ -54,9 +54,9 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 2. When you encounter a superscripted <span class="tip" title="Hover here">##</span> below, hover over it to see the associated text.
 
 #### Checklist before we begin:
-- [ ] Ensure GitHub Desktop is installed and you are signed in. For installing it on Windows and macOS, go [here](https://desktop.github.com/). For some flavors of Linux, check [here](https://github.com/shiftkey/desktop).
-- [ ] Verify that [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) is installed and you are signed in using GitHub. Don't forget to sign in to the extensions as well (you can check this by looking for any pending notifications on the profile icon).
-- [ ] Install the GitLens extension in VS Code. You can do this by searching for "GitLens" in the Extensions tab, or by going [here](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens).
+* Ensure GitHub Desktop is installed and you are signed in. For installing it on Windows and macOS, go [here](https://desktop.github.com/). For some flavors of Linux, check [here](https://github.com/shiftkey/desktop).
+* Verify that [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) is installed and you are signed in using GitHub. Don't forget to sign in to the extensions as well (you can check this by looking for any pending notifications on the profile icon).
+* Install the GitLens extension in VS Code. You can do this by searching for "GitLens" in the Extensions tab, or by going [here](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens).
 
 
 ### Table of Contents
