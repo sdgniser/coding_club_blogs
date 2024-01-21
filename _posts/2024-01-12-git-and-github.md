@@ -132,13 +132,14 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 
 <img src="{{site.baseurl}}/assets/img/git-and-github.assets.d/brm.png" alt="Branching, Forking & Pull Requests">
 <br>
-Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
+
+Image source: <a href="https://www.atlassian.com/git/tutorials/using-branches/git-merge" target="_blank">https://www.atlassian.com/git/tutorials/using-branches/git-merge</a>
 
 </div>
 
 
 ## Managing the `24cs460(clone)` repo
-1. We will work with a duplicate of the original repo. Go to https://github.com/JeS24/24cs460clone.
+1. We will work with a duplicate of the original repo. Go to [https://github.com/JeS24/24cs460clone](https://github.com/JeS24/24cs460clone).
 2. <span class="marked">Fork</span> the repo to your GitHub account. Click on the <span class="marked">Fork</span> button on the top-right corner of the page. This creates a copy of the repo under your GitHub account.
 3. <span class="marked">Clone</span> the repo to your computer by clicking on the <span class="marked">Code</span> button, and then copying the URL. Check next section for further steps.
 4. Make some changes to the repo (*check next sections*).
@@ -355,7 +356,7 @@ ChatGPT is listed at the bottom, because it is not a reliable source of informat
 
 ### GitHub Pro for Students
 * GitHub offers a <span class="marked">free Pro account</span> to students, as part of the GitHub Student Developer Pack. This gives you access to a bunch of useful features, like <span class="marked">GitHub CoPilot</span> and <span class="marked">GitHub Codespaces</span>.
-* You can apply for the pack at https://education.github.com/pack. They ask for some <span class="marked">proof of enrollment</span>, e.g., a student ID card etc., that you submit each year. I strongly recommend applying for it. It barely takes 5 minutes.
+* You can apply for the pack [here](https://education.github.com/pack). They ask for some <span class="marked">proof of enrollment</span>, e.g., a student ID card etc., that you submit each year. I strongly recommend applying for it. It barely takes 5 minutes.
 * <span class="marked">GitHub CoPilot</span> is an <span class="marked">AI pair programmer</span> that helps you write code. Think of it like ChatGPT but with access to your codebase. So, you can ask it to comment your code, write test cases or to explain an error or a piece of code to you, among other things. You can read more about GitHub CoPilot [here](https://copilot.github.com/).
 * <span class="marked">GitHub Codespaces</span> lets you run your code <span class="marked">in the browser</span>, without having to install anything else on your computer. It is similar to Google Colab, but for GitHub repos. You can also use it to <span class="marked">collaborate</span> with others on your codebase. You can read more about GitHub Codespaces [here](https://github.com/features/codespaces).
 
@@ -389,5 +390,5 @@ ChatGPT is listed at the bottom, because it is not a reliable source of informat
 
 
 ## References
-* Thorough Git tutorial: https://www.atlassian.com/git/tutorials/setting-up-a-repository
-* GitHub walkthrough: https://docs.github.com/en/get-started/quickstart/hello-world
+* Thorough Git tutorial: [https://www.atlassian.com/git/tutorials/setting-up-a-repository](https://www.atlassian.com/git/tutorials/setting-up-a-repository)
+* GitHub walkthrough: [https://docs.github.com/en/get-started/quickstart/hello-world](https://docs.github.com/en/get-started/quickstart/hello-world)
