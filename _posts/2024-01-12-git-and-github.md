@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git & GitHub: An Invitation to Source Control"
+title:  "Git & GitHub: An Invitation to Version Control"
 date:   2024-01-12 18:00:00 +0530
 categories: jekyll update
 author: 'Jyotirmaya Shivottam'
@@ -8,65 +8,59 @@ author: 'Jyotirmaya Shivottam'
 
 <style>
     html, body {
-        background-color: #0d1117;
+      /* background-color: #0d1117; */ /* dark mode */
+      background-color: #fdfdfd; /* light mode */
     }
 
     * {
-        color: #c9d1d9;
-        font-family: 'JuliaMono';
-        font-size: 95%;
-        letter-spacing: 0.015em;
+      /* color: #c9d1d9; */ /* dark mode color */
+      font-family: 'JuliaMono';
+      font-size: 95%;
+      letter-spacing: 0.015em;
     }
 
     h2 img {
-        position: relative;
-        top: 0.15em;
-        left: 0.1em;
-    }
-
-    h3.subt {
-        position: relative;
-        left: 4.5em;
+      position: relative;
+      top: 0.15em;
+      left: 0.1em;
     }
 
     span.marked {
-        color: #92fc8f;
-        font-weight: 600;
+      /* color: #92fc8f; */ /* dark mode color */
+      color: #2ea043; /* light mode color */
+      font-weight: 600;
     }
 
     .tip {
-        color: #e2ac0f;
-        font-weight: 900;
+      color: #e2ac0f;
+      font-weight: 900;
     }
 
     span.tip-text {
-        color: #f2fc0f;
-        font-weight: 600;
-        font-style: italic;
+      color: #f2fc0f; /* dark mode color */
+      color: #f2fc0f; /* light mode color */
+      font-weight: 600;
+      font-style: italic;
     }
 </style>
 
-
-<h2 style="font-size: 48px;">
+<div style="text-align: center;">
 <img src="{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg" width=48 height=48>
-Git & GitHub
-</h2>
-
-<h3 class="subt">An Invitation to Version Control</h3>
+</div>
 
 This blogpost is a slightly expanded conversion of a talk, I gave to the students of CS460/CS660 at NISER, Bhubaneswar, on January 12, 2024. It is a tutorial-style introduction to Git & GitHub, and how to use them for version control. The sections are delineated to be easily navigable. This blogpost / talk is meant for beginners, and assumes no prior knowledge of Git or GitHub. It is also meant to be interactive, so that the readers can follow along and try out the `git` commands themselves.
 
-### Notes
+#### Notes
 1. The original slides are available in the associated [GitHub repo]({{site.baseurl}}/assets/docs/git-and-github.assets.d/git-and-github-talk.pdf) for the Coding Club blogs.
 2. When you encounter a superscripted <span class="tip" title="Hover here">##</span> below, hover over it to see the associated text.
 
-### Checklist before we begin:
+#### Checklist before we begin:
 - [ ] Ensure GitHub Desktop is installed and you are signed in. For installing it on Windows and macOS, go [here](https://desktop.github.com/). For some flavors of Linux, check [here](https://github.com/shiftkey/desktop).
 - [ ] Verify that [Visual Studio Code (VS Code)](https://code.visualstudio.com/download) is installed and you are signed in using GitHub. Don't forget to sign in to the extensions as well (you can check this by looking for any pending notifications on the profile icon).
 - [ ] Install the GitLens extension in VS Code. You can do this by searching for "GitLens" in the Extensions tab, or by going [here](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens).
 
 
-## Table of Contents
+### Table of Contents
 - [Some Preliminaries](#some-preliminaries)
   - [Version Control Systems and why we need them?](#version-control-systems-and-why-we-need-them)
   - [What are Git \& GitHub?](#what-are-git--github)
@@ -94,17 +88,17 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
   - [`git config`](#git-config)
   - [`git submodule`](#git-submodule)
   - [`git <subcommand> --dry-run`](#git-subcommand---dry-run)
-  - [References](#references)
+- [References](#references)
 
-# Some Preliminaries
-## Version Control Systems and why we need them?
+## Some Preliminaries
+### Version Control Systems and why we need them?
 * In "Version Control Systems" (VCS), "Version" refers to a specific state of the codebase at a given point in time, and "Control" refers to the ability to manage changes to the codebase's state over time. VCS are also called **Source Control Systems**.
 * VCS store <span class="marked">snapshots</span> of your codebase ($\equiv$ codebse's state) at different points in time. Through these snapshots, they let you <span class="marked">compare changes</span> to files.
 * They also allow you to <span class="marked">revert files / entire projects back to any state</span>, thereby preventing you from losing your work, e.g., if you make a mistake in your code or accidentally delete something.
 * For CS460, since you'll be working in groups, VCS will help you <span class="marked">collaborate</span> with your groupmates.
 
 
-## What are Git & GitHub?
+### What are Git & GitHub?
 * Git is a free and open-source distributed VCS, that works via the command line interface, i.e., a CLI tool. You can download and install it from [https://git-scm.com/downloads](https://git-scm.com/downloads).
 * GitHub is a web-based hosting service for version control using Git. There are other similar services, e.g., GitLab, BitBucket, etc. There are also other VCS, e.g., Mercurial, Subversion, etc.
 * <span class="tip">Tip</span>: <span class="tip-text">Git is a tool, GitHub is a service. You can use Git without GitHub, but not the other way around</span>.
@@ -112,7 +106,7 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 * <span class="tip">Sidenote</span>: There exists a related set of software called Knowledge Management Systems, e.g., Obsidian, Notion, Confluence, etc.
 
 
-## Git Primer - Some Basic Concepts
+### Git Primer - Some Basic Concepts
 * Git is a <span class="marked">distributed</span> VCS. This means that every collaborator has a complete <span class="marked">working copy<sup class="tip" title="The local copy of the codebase on which you are currently working.">##</sup></span> of the entire codebase, including its full history.
 * Git stores the codebase in a <span class="marked">repository</span>, or <span class="marked">repo</span> for short. A repo is a directory that contains all the files and folders of your project, along with a special hidden folder called `.git`.
 * The `.git` folder contains all the information about the history of your project, including all the snapshots of your codebase, and the changes made to it.
@@ -120,7 +114,7 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 * <span class="marked">Commits</span> are snapshots of your codebase at a given point in time. Each commit has a unique identifier called a <span class="marked">hash</span>, which is a long string of characters.
 
 
-## Git Primer - Some Keywords
+### Git Primer - Some Keywords
 * Some labels:
   * <span class="marked">Local</span> - The computer / server you are working on.
   * <span class="marked">Remote</span> - A GitHub repo that stores the codebase.
@@ -131,7 +125,7 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 * <span class="marked">Pull / Merge Requests</span> - A request to merge a branch into another branch. This is how you collaborate with others on GitHub.
 
 
-## Branching & Merging Illustrated
+### Branching & Merging Illustrated
 <div style="text-align: center;">
 
 ![Branching, Forking & Pull Requests]({{site.baseurl}}/assets/img/git-and-github.assets.d/brm.png)
@@ -140,7 +134,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 </div>
 
 
-# Managing the `24cs460(clone)` repo
+## Managing the `24cs460(clone)` repo
 1. We will work with a duplicate of the original repo. Go to https://github.com/JeS24/24cs460clone.
 2. <span class="marked">Fork</span> the repo to your GitHub account. Click on the <span class="marked">Fork</span> button on the top-right corner of the page. This creates a copy of the repo under your GitHub account.
 3. <span class="marked">Clone</span> the repo to your computer by clicking on the <span class="marked">Code</span> button, and then copying the URL. Check next section for further steps.
@@ -153,7 +147,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 10. Handle <span class="marked">merge conflicts</span> (*check next sections*).
 
 
-## `git init` and `git clone`
+### `git init` and `git clone`
 * After copying the link, to clone an <span class="marked">existing repo</span>, you can use the `git clone <remote>` command. This creates a new repo in the current directory, and downloads the codebase from the remote repo.
   ```sh
   git clone https://github.com/<GH_USER_NAME>/24cs460clone.git
@@ -162,7 +156,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * <span class="tip">Tip</span>: <span class="tip-text">To push an existing codebase to GitHub, see: [https://www.digitalocean.com/community/tutorials/how-to-push-an-existing-project-to-github](https://www.digitalocean.com/community/tutorials/how-to-push-an-existing-project-to-github).</span>
 * <span class="tip">Tip</span>: <span class="tip-text">You can also create a new repo on GitHub, and then clone it to your computer. See the instructions given by GitHub after creating a new empty repo.</span>
 
-## `git remote -v`
+### `git remote -v`
 * `git remote -v` shows you the <span class="marked">remote URLs</span> of your repo.
 * `git remote show <name>` shows you information about the remote with the given name.
 * <span class="tip">OPTIONAL</span>:
@@ -171,7 +165,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
   * `git remote prune <name>` removes all the remote-tracking branches that no longer exist on the remote with the given name.
 
 
-## `git branch`, `git checkout` and `git switch`
+### `git branch`, `git checkout` and `git switch`
 * `git branch` shows you the <span class="marked">branches</span> in your repo.
 * `git branch <name>` creates a new branch with the given name.
 * `git checkout <name>` / `git switch <name>` switches to the branch with the given name.
@@ -181,7 +175,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * <span class="tip">Tip</span>: <span class="tip-text">Branch names should be kept short, e.g., `main`, `dev`, `feature-1`, etc.</span>
 
 
-## `git status`, `git add`, `git rm` & `git restore`,
+### `git status`, `git add`, `git rm` & `git restore`,
 * <span class="tip-text">Make a change to the repo, e.g., add a new file, modify an existing file, etc</span>.
 * `git status` shows you the status of your repo, including the files in the <span class="marked">staging area</span><sup class="tip" title="The staging area is a special area in your repo, where you can add files before committing them.">##</sup>, and the files in the <span class="marked">working directory</span><sup class="tip" title="The working directory is the directory on your computer, where your repo is stored.">##</sup>.
 * `git add -A` $\equiv$ `git add *` adds all modified files in the repo to the staging area.
@@ -191,7 +185,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * `git restore <path>` undoes changes to files in the working directory.
 
 
-## `git commit` & `git commit --amend`
+### `git commit` & `git commit --amend`
 * `git commit -m "<message>"` <span class="marked">commits<sup class="tip" title="A commit is a snapshot of your project at a particular point in time.">##</sup></span> the changes in the staging area to the <span class="tip-text">local repo</span>, with the given message. It does not affect the remote repo (till we <span class="marked">push</span>).
 * `git commit -a -m "<message>"` stages ("adds") & commits all the changes to the <span class="tip-text">local repo</span>, with the given message.
 * <span class="tip">Tip</span>: <span class="tip-text">Commit messages should be short, yet precise e.g., "Add README.md", "Fix typo in README.md", etc.</span>
@@ -202,7 +196,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * <span class="tip">Tip</span>: <span class="tip-text">If, for some reason, you cannot avoid a large commit, you should write a descriptive message.</span>
 
 
-## `git push`, `git log` & `git show`
+### `git push`, `git log` & `git show`
 * `git push <remote> <branch>` <span class="marked">pushes<sup class="tip" title="Pushing means updating the remote with any commits made locally that do not yet exist on the remote.">##</sup></span> the changes in the local repo to the remote repo, to the given branch (here, `origin` & `main`).
 * `git push -u <remote> <branch>` sets the given remote repo and branch as the <span class="marked">upstream</span> for the current branch. This lets you use `git push` (and `git pull`) without specifying the remote and branch each time.
 * <span class="tip">OPTIONAL</span>:
@@ -214,7 +208,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * `git show <commit-hash>` shows you the changes in the given commit.
 
 
-## `git pull` & `git fetch`
+### `git pull` & `git fetch`
 * `git pull <remote> <branch>` <span class="marked">pulls<sup class="tip" title="Pulling entails fetching the changes from remote and then automatically merging them into the current branch of local.">##</sup></span> the changes from the remote repo to the local repo, from the given branch (here, `origin` & `main`).
 * `git fetch <remote> <branch>` <span class="marked">fetches</span> the changes from the remote repo to the local repo, but <span class="tip-text">does not merge the changes into local</span>.
 * To <span class="marked">update</span> your local repo, you should <span class="marked">pull</span> the changes from the remote repo, and then <span class="marked">merge</span> them into your local repo.
@@ -224,7 +218,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * <span class="tip">Tip</span>: If you don't see remote's changes in local, try `git fetch` first, and then `git pull`.
 
 
-## Creating a Pull Request (PR) & Merging PRs
+### Creating a Pull Request (PR) & Merging PRs
 * <span class="marked">Pull requests</span> are a way to collaborate with others on GitHub. Once you have made some changes on a branch on your repo, you can create a PR to merge your changes with another branch, typically the <span class="marked">main</span> branch of your repo, or the `main` branch of another repo, e.g., <span class="marked">upstream</span>.
 * Go to your GitHub repo, and click on the <span class="marked">Pull Requests</span> tab.
 * Find the branch you want to merge, and click on <span class="marked">New pull request</span>.
@@ -237,7 +231,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * After the PR is merged, check the commit history of your repo, and see the changes (`git log` or GitLens).
 
 
-## Syncing your Local Repo with the Upstream Repo
+### Syncing your Local Repo with the Upstream Repo
 * <span class="tip">Tip</span>: <span class="tip-text">Always <span class="marked">pull</span> before you <span class="marked">push</span>, to avoid merge conflicts on the remote repo.</span>
 * To sync:
   * `git fetch upstream` <span class="marked">fetches</span> the changes from the remote repo to the local repo, but <span class="tip-text">does not merge the changes into local</span>.
@@ -245,7 +239,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
   * `git push origin <branch>` <span class="marked">pushes</span> the changes from the local repo to the remote repo, to the given branch (here, `origin` & `main`).
 
 
-## Handling Merge Conflicts (& `git diff`)
+### Handling Merge Conflicts (& `git diff`)
 * <span class="marked">Merge conflicts</span> occur when changes are made to the same part of the same file on two different branches and Git cannot automatically determine which version to use.
 * To see this, let us make a conflicting change to `README.md`.
 * Run `git fetch`.
@@ -265,7 +259,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * <span class="tip">Tip:</span> <span class="tip-text">`git merge --abort` aborts the merge (before committing), and <span class="marked">resets</span> your repo to the state before the merge. This might be useful if you want to start over, e.g., if you made a mistake while resolving the merge conflict.</span>
 
 
-## `git reset` - The (_almost-_)Nuclear Option
+### `git reset` - The (_almost-_)Nuclear Option
 * Sometimes, you might want to undo a (few) commit(s) or to <span class="marked">reset</span> your repo to a previous state, and start over, e.g., if you made a mistake, or if a merge conflict is too complicated to resolve. `git reset` lets you <span class="marked">reset</span> your repo to a previous state.
 * `git reset --hard <commit-hash>` resets your repo to the given commit, and <span class="marked" style="color: crimson;">deletes (!!)</span> all the commits after it.
 * `git reset --soft <commit-hash>` resets your repo to the given commit, but <span class="marked">keeps (!!)</span> all the commits after it.
@@ -274,7 +268,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * <span class="tip">Tip</span>: <span class="tip-text">Use `git reset --hard` with caution. It is a <span class="marked" style="color: crimson;">destructive</span> command, and can result in <span class="marked" style="color: crimson;">data loss</span>.</span>
 
 
-## `git revert` & `git stash` - The Safer Alternatives
+### `git revert` & `git stash` - The Safer Alternatives
 * `git revert` lets you <span class="marked">undo</span> a commit, without deleting it.
 * `git revert <commit-hash>` creates a new commit that <span class="marked">undoes</span> the changes in the given commit.
 * <span class="tip">Tip</span>: <span class="tip-text">Use `git revert` instead of `git reset --hard` to undo commits.</span>
@@ -286,7 +280,7 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
 * `git stash show <stash-name>` shows you the changes in the given stash.
 
 
-## `.gitignore`
+### `.gitignore`
 * `.gitignore` is a file that lets you <span class="marked">ignore</span> files and folders in your repo. The files and folders in `.gitignore` are <span class="marked">not tracked</span> by git.
 * You can use <span class="marked">wildcards</span> in `.gitignore`, e.g., `*.pyc`, `*.log`, `__pycache__`, etc.
 * You can also use <span class="marked">negation</span> in `.gitignore`, e.g., `!*.py`, `!*.md`, etc.
@@ -329,10 +323,10 @@ Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge]
   ```
 
 
-# Additional Information
+## Additional Information
 The following sections contain some additional information, that you might find useful for your future projects.
 
-## Where to get help with Git & GitHub (& in general)?
+### Where to get help with Git & GitHub (& in general)?
 * On a terminal:
     `git <subcommand> --help` $\equiv$ `git help <subcommand>`, e.g., `git commit --help`.
 * On the web:
@@ -346,7 +340,7 @@ ChatGPT is listed at the bottom, because it is not a reliable source of informat
   * <span class="tip">Tip:</span> <span class="tip-text">Create a repo on your GitHub account and play around with it.</span>
 
 
-## Some notes on **GitHub** usage
+### Some notes on **GitHub** usage
 * GitHub has a <span class="marked">file size limit</span> of 100 MiB per file, and of 1 GiB with [Git Large File Storage](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-git-large-file-storage#about-git-large-file-storage).
 * It has a <span class="marked">file count limit</span> of 300 updated files per commit, at 100 MiB per file for free accounts.
 * To check other GitHub repo limitations, see [this](https://docs.github.com/en/repositories/creating-and-managing-repositories/repository-limits).
@@ -356,14 +350,14 @@ ChatGPT is listed at the bottom, because it is not a reliable source of informat
 * <span class="tip">Tip</span>: <span class="tip-text">GitHub also provides access to [github.dev](github.dev) or [vscode.dev](vscode.dev), to view and edit your repos in the browser itself.</span> Try pressing the <span class="marked">.</span> key while viewing your repo in the browser.
 
 
-## GitHub Pro for Students
+### GitHub Pro for Students
 * GitHub offers a <span class="marked">free Pro account</span> to students, as part of the GitHub Student Developer Pack. This gives you access to a bunch of useful features, like <span class="marked">GitHub CoPilot</span> and <span class="marked">GitHub Codespaces</span>.
 * You can apply for the pack at https://education.github.com/pack. They ask for some <span class="marked">proof of enrollment</span>, e.g., a student ID card etc., that you submit each year. I strongly recommend applying for it. It barely takes 5 minutes.
 * <span class="marked">GitHub CoPilot</span> is an <span class="marked">AI pair programmer</span> that helps you write code. Think of it like ChatGPT but with access to your codebase. So, you can ask it to comment your code, write test cases or to explain an error or a piece of code to you, among other things. You can read more about GitHub CoPilot [here](https://copilot.github.com/).
 * <span class="marked">GitHub Codespaces</span> lets you run your code <span class="marked">in the browser</span>, without having to install anything else on your computer. It is similar to Google Colab, but for GitHub repos. You can also use it to <span class="marked">collaborate</span> with others on your codebase. You can read more about GitHub Codespaces [here](https://github.com/features/codespaces).
 
 
-## `git config`
+### `git config`
 * `git config` lets you <span class="marked">configure</span> your git installation.
 * `git config --global` lets you configure your git installation <span class="marked">globally</span>, i.e., for all repos on your computer. Without the `--global` flag, the configuration is <span class="marked">local</span>, i.e., for the current repo only.
 * `git config user.name "<name>"` sets your <span class="marked">name</span> for git commits (<span class="tip-text">local repo</span>).
@@ -375,7 +369,7 @@ ChatGPT is listed at the bottom, because it is not a reliable source of informat
 * `git config --get <item>` shows you the value of the given <span class="marked">item</span> in the local git configuration, e.g., `git config --get remote.origin.url`.
 
 
-## `git submodule`
+### `git submodule`
 * `git submodule` lets you <span class="marked">include</span> another repo as a <span class="marked">submodule</span> in your repo.
 * This is useful when you want to <span class="marked">reuse</span> code from another repo, e.g., a library, a framework, etc.
 * `git submodule add <url>` adds the repo at the given URL as a submodule to your repo.
@@ -383,7 +377,7 @@ ChatGPT is listed at the bottom, because it is not a reliable source of informat
 * `git submodule foreach git pull origin main` pulls the latest changes from the remote repos to the submodule.
 
 
-## `git <subcommand> --dry-run`
+### `git <subcommand> --dry-run`
 * `git <subcommand> --dry-run` is a <span class="marked">dry run</span> of a git command. It shows you what the command would do, without actually doing it.
 * For example, `git add --dry-run` shows you all the files that would be added to the staging area, without actually adding them.
 * Note that `git --dry-run` is not a git subcommand. It is an option that you can append to any git subcommand, e.g., `git add --dry-run`.
