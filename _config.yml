@@ -60,7 +60,9 @@ markdown: kramdown
 
 defaults:
   - _posts:
-      path: "assets/img"
+      path: 
+        - "assets/img"
+        - "assets/docs"
     values:
       image: true
       read_time: true
