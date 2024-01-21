@@ -12,7 +12,7 @@ author: 'Jyotirmaya Shivottam'
     }
 
     * {
-        font-family: 'JuliaMono';
+        font-family: 'JuliaMono Regular';
         font-size: 95%;
         letter-spacing: 0.015em;
     }
