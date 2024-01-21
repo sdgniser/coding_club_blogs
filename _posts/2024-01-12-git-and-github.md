@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "<img src='{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg' alt='Git Icon'> Git & GitHub: An Invitation to Version Control"
+title:  "Git & GitHub: An Invitation to Version Control"
 date:   2024-01-12 18:00:00 +0530
 categories: jekyll update
 author: 'Jyotirmaya Shivottam'
