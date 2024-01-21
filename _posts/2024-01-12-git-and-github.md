@@ -15,7 +15,6 @@ author: 'Jyotirmaya Shivottam'
     * {
       /* color: #c9d1d9; */ /* dark mode color */
       font-family: 'JuliaMono Regular';
-      font-size: 95%;
       letter-spacing: 0.015em;
     }
 
