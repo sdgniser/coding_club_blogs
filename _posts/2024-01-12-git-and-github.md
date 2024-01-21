@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Git & GitHub: An Invitation to Version Control"
+title:  "<img src='{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg' alt='Git Icon' width=64 height=64> Git & GitHub: An Invitation to Version Control"
 date:   2024-01-12 18:00:00 +0530
 categories: jekyll update
 author: 'Jyotirmaya Shivottam'
@@ -127,7 +127,7 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 ### Branching & Merging Illustrated
 <div style="text-align: center;">
 
-![Branching, Forking & Pull Requests]({{site.baseurl}}/assets/img/git-and-github.assets.d/brm.png)
+<img src="{{site.baseurl}}/assets/img/git-and-github.assets.d/brm.png" alt="Branching, Forking & Pull Requests">
 <br>
 Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
 </div>
