@@ -132,6 +132,7 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 
 <img src="{{site.baseurl}}/assets/img/git-and-github.assets.d/brm.png" alt="Branching, Forking & Pull Requests">
 <br>
+
 Image source: [https://www.atlassian.com/git/tutorials/using-branches/git-merge](https://www.atlassian.com/git/tutorials/using-branches/git-merge)
 
 </div>
