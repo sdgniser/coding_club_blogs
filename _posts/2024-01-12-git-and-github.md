@@ -63,26 +63,26 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 ### Table of Contents
 - [Some Preliminaries](#some-preliminaries)
   - [Version Control Systems and why we need them?](#version-control-systems-and-why-we-need-them)
-  - [What are Git \& GitHub?](#what-are-git--github)
+  - [What are Git & GitHub?](#what-are-git--github)
   - [Git Primer - Some Basic Concepts](#git-primer---some-basic-concepts)
   - [Git Primer - Some Keywords](#git-primer---some-keywords)
-  - [Branching \& Merging Illustrated](#branching--merging-illustrated)
+  - [Branching & Merging Illustrated](#branching--merging-illustrated)
 - [Managing the `24cs460(clone)` repo](#managing-the-24cs460clone-repo)
   - [`git init` and `git clone`](#git-init-and-git-clone)
   - [`git remote -v`](#git-remote--v)
   - [`git branch`, `git checkout` and `git switch`](#git-branch-git-checkout-and-git-switch)
-  - [`git status`, `git add`, `git rm` \& `git restore`,](#git-status-git-add-git-rm--git-restore)
-  - [`git commit` \& `git commit --amend`](#git-commit--git-commit---amend)
-  - [`git push`, `git log` \& `git show`](#git-push-git-log--git-show)
-  - [`git pull` \& `git fetch`](#git-pull--git-fetch)
-  - [Creating a Pull Request (PR) \& Merging PRs](#creating-a-pull-request-pr--merging-prs)
+  - [`git status`, `git add`, `git rm` & `git restore`,](#git-status-git-add-git-rm--git-restore)
+  - [`git commit` & `git commit --amend`](#git-commit--git-commit---amend)
+  - [`git push`, `git log` & `git show`](#git-push-git-log--git-show)
+  - [`git pull` & `git fetch`](#git-pull--git-fetch)
+  - [Creating a Pull Request (PR) & Merging PRs](#creating-a-pull-request-pr--merging-prs)
   - [Syncing your Local Repo with the Upstream Repo](#syncing-your-local-repo-with-the-upstream-repo)
-  - [Handling Merge Conflicts (\& `git diff`)](#handling-merge-conflicts--git-diff)
+  - [Handling Merge Conflicts (& `git diff`)](#handling-merge-conflicts--git-diff)
   - [`git reset` - The (_almost-_)Nuclear Option](#git-reset---the-almost-nuclear-option)
-  - [`git revert` \& `git stash` - The Safer Alternatives](#git-revert--git-stash---the-safer-alternatives)
+  - [`git revert` & `git stash` - The Safer Alternatives](#git-revert--git-stash---the-safer-alternatives)
   - [`.gitignore`](#gitignore)
 - [Additional Information](#additional-information)
-  - [Where to get help with Git \& GitHub (\& in general)?](#where-to-get-help-with-git--github--in-general)
+  - [Where to get help with Git & GitHub (& in general)?](#where-to-get-help-with-git--github--in-general)
   - [Some notes on **GitHub** usage](#some-notes-on-github-usage)
   - [GitHub Pro for Students](#github-pro-for-students)
   - [`git config`](#git-config)
@@ -331,7 +331,7 @@ The following sections contain some additional information, that you might find 
 
 ### Where to get help with Git & GitHub (& in general)?
 * On a terminal:
-    `git <subcommand> --help` $\equiv$ `git help <subcommand>`, e.g., `git commit --help`.
+    `git <subcommand> --help` &\equiv& `git help <subcommand>`, e.g., `git commit --help`.
 * On the web:
   * Git Documentation: [https://git-scm.com/docs](https://git-scm.com/docs)
   * GitHub Documentation: [https://docs.github.com/en](https://docs.github.com/en)
