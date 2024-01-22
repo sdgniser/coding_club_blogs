@@ -14,7 +14,7 @@ author: 'Jyotirmaya Shivottam'
 
     * {
       /* color: #c9d1d9; */ /* dark mode color */
-      font-family: 'JuliaMono Regular';
+      /* font-family: 'JuliaMono Regular'; */
       letter-spacing: 0.015em;
     }
 
@@ -331,7 +331,7 @@ The following sections contain some additional information, that you might find 
 
 ### Where to get help with Git & GitHub (& in general)?
 * On a terminal:
-    `git <subcommand> --help` &\equiv& `git help <subcommand>`, e.g., `git commit --help`.
+    `git <subcommand> --help` $\equiv$ `git help <subcommand>`, e.g., `git commit --help`.
 * On the web:
   * Git Documentation: [https://git-scm.com/docs](https://git-scm.com/docs)
   * GitHub Documentation: [https://docs.github.com/en](https://docs.github.com/en)
