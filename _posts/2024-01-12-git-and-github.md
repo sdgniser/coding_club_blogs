@@ -14,7 +14,7 @@ author: 'Jyotirmaya Shivottam'
 
     * {
       /* color: #c9d1d9; */ /* dark mode color */
-      /* font-family: 'JuliaMono Regular'; */
+      font-family: 'JuliaMono Regular';
       letter-spacing: 0.015em;
     }
 
@@ -45,8 +45,6 @@ author: 'Jyotirmaya Shivottam'
 <div style="text-align: center;">
 
 <img class="teaser" src="{{site.baseurl}}/assets/img/git-and-github.assets.d/git.svg" width=72 height=72>
-
-$x_{n+1} = rx_n(1 - x_n)$
 
 </div>
 
@@ -96,7 +94,7 @@ This blogpost is a slightly expanded conversion of a talk, I gave to the student
 ## Some Preliminaries
 ### Version Control Systems and why we need them?
 * In "Version Control Systems" (VCS), "Version" refers to a specific state of the codebase at a given point in time, and "Control" refers to the ability to manage changes to the codebase's state over time. VCS are also called **Source Control Systems**.
-* VCS store <span class="marked">snapshots</span> of your codebase ($\equiv$ codebse's state) at different points in time. Through these snapshots, they let you <span class="marked">compare changes</span> to files.
+* VCS store <span class="marked">snapshots</span> of your codebase ($$\equiv$$ codebse's state) at different points in time. Through these snapshots, they let you <span class="marked">compare changes</span> to files.
 * They also allow you to <span class="marked">revert files / entire projects back to any state</span>, thereby preventing you from losing your work, e.g., if you make a mistake in your code or accidentally delete something.
 * For CS460, since you'll be working in groups, VCS will help you <span class="marked">collaborate</span> with your group-mates.
 
@@ -183,7 +181,7 @@ Image source: <a href="https://www.atlassian.com/git/tutorials/using-branches/gi
 ### `git status`, `git add`, `git rm` & `git restore`,
 * <span class="tip-text">Make a change to the repo, e.g., add a new file, modify an existing file, etc</span>.
 * `git status` shows you the status of your repo, including the files in the <span class="marked">staging area</span><sup class="tip" title="The staging area is a special area in your repo, where you can add files before committing them.">##</sup>, and the files in the <span class="marked">working directory</span><sup class="tip" title="The working directory is the directory on your computer, where your repo is stored.">##</sup>.
-* `git add -A` $\equiv$ `git add *` adds all modified files in the repo to the staging area.
+* `git add -A` $$\equiv$$ `git add *` adds all modified files in the repo to the staging area.
 * `git add <file>` adds the given file to the staging area.
 * `git rm --cached <file>` removes the given file from the staging area, but keeps it in the working directory.
 * `git rm <file>` / `git rm -r <folder>` removes the given file / folder from the working directory (if there are no modifications).
@@ -268,8 +266,8 @@ Image source: <a href="https://www.atlassian.com/git/tutorials/using-branches/gi
 * Sometimes, you might want to undo a (few) commit(s) or to <span class="marked">reset</span> your repo to a previous state, and start over, e.g., if you made a mistake, or if a merge conflict is too complicated to resolve. `git reset` lets you <span class="marked">reset</span> your repo to a previous state.
 * `git reset --hard <commit-hash>` resets your repo to the given commit, and <span class="marked" style="color: crimson;">deletes (!!)</span> all the commits after it.
 * `git reset --soft <commit-hash>` resets your repo to the given commit, but <span class="marked">keeps (!!)</span> all the commits after it.
-* `git reset ~<n>` resets your repo to the commit <span class="marked">$n$ commits before</span> the current commit.
-* `git reset HEAD~<n>` resets your repo to the commit <span class="marked">$n$ commits before</span> the current commit, and <span class="marked">unstages</span> all the commits after it.
+* `git reset ~<n>` resets your repo to the commit <span class="marked">$$n$$ commits before</span> the current commit.
+* `git reset HEAD~<n>` resets your repo to the commit <span class="marked">$$n$$ commits before</span> the current commit, and <span class="marked">unstages</span> all the commits after it.
 * <span class="tip">Tip</span>: <span class="tip-text">Use `git reset --hard` with caution. It is a <span class="marked" style="color: crimson;">destructive</span> command, and can result in <span class="marked" style="color: crimson;">data loss</span>.</span>
 
 
@@ -333,7 +331,7 @@ The following sections contain some additional information, that you might find 
 
 ### Where to get help with Git & GitHub (& in general)?
 * On a terminal:
-    `git <subcommand> --help` $\equiv$ `git help <subcommand>`, e.g., `git commit --help`.
+    `git <subcommand> --help` $$\equiv$$ `git help <subcommand>`, e.g., `git commit --help`.
 * On the web:
   * Git Documentation: [https://git-scm.com/docs](https://git-scm.com/docs)
   * GitHub Documentation: [https://docs.github.com/en](https://docs.github.com/en)
