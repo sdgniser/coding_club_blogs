@@ -143,7 +143,7 @@ The MSE Loss calculates the average of the squared differences between the true 
 
 In the image below, we can see how the MSE Loss is calculated for a single example. In the image The red dots represent the data points and the purple dots represent the points on the fitted line who have the same x value  $d_i = y_i - \hat{y}_i$.
 
-![MSE Loss](IMG_0011.jpg)
+![MSE Loss]({{site.baseurl}}/assets/img/lrandgd/IMG_0011.jpg)
 
 The MSE Loss is useful for regression tasks because it penalizes large differences between predicted and actual values more heavily than small differences. This encourages the model to produce predictions that are close to the actual values.
 
