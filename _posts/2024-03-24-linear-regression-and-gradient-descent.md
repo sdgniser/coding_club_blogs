@@ -265,7 +265,7 @@ const y = x.map(val => val + normalRandom(0, 0.05));
 class MLModel {
  constructor() {
   this.num_epochs = 10;
-  this.alpha = 1;
+  this.alpha = 0.4;
 
   this.fit_plot = this.createFitPlot();
   this.loss_plot = this.createLossPlot();
