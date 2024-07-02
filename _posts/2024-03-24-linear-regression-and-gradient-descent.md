@@ -7,6 +7,7 @@ author: 'Aritra Mukhopadhyay'
 ---
 
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
 
 <style>
   .slider-container {
@@ -18,12 +19,20 @@ author: 'Aritra Mukhopadhyay'
   }
 </style>
 
+
 - [What is Machine Learning?](#what-is-machine-learning)
 - [Linear Regression](#linear-regression)
   - [Why Learning to do a Linear Fit is enough?](#why-learning-to-do-a-linear-fit-is-enough)
   - [Shift to Matrix Notation and Concept of Batch Processing](#shift-to-matrix-notation-and-concept-of-batch-processing)
   - [The Loss Function](#the-loss-function)
 - [Gradient Descent](#gradient-descent)
+  - [Why not maxima-minima](#why-not-maxima-minima)
+  - [Intuition Behind Gradient Descent](#intuition-behind-gradient-descent)
+  - [Gradient Descent Algorithm](#gradient-descent-algorithm)
+  - [Choosing the Learning Rate](#choosing-the-learning-rate)
+  - [Types of Gradient Descent](#types-of-gradient-descent)
+
+
 
 
 Although this will be a walk through the concept of Linear Regression mostly from point of view of Machine Learning, we will also touch upon the mathematical aspects of it and it's uses in Statistical data analysis (which is mostly relevant to our lab experiments).
@@ -42,7 +51,9 @@ For example, suppose the question is: **"Whether I am going to play Badminton to
 
 So, we have a lot of factors which influence our decision. Our decision is going to be based on these factors. We can say that our decision would be a function of these factors.
 
-$$\text{decision} = f(factor_0, factor_1, factor_2, ...)$$
+$$
+\text{decision} = f(factor_0, factor_1, factor_2, ...)
+$$
 
 Given the value of these factors, if we have the function, we can easily take the decision. Now to actually do it, we have to express (encode) all these factors in terms of some numbers.
 
@@ -180,42 +191,30 @@ The gradient descent algorithm involves the following steps:
   where $\alpha$ is the learning rate, a small positive number that controls the step size.
 4. **Repeat**: Repeat steps 2 and 3 until the loss function converges to a minimum value or until a certain number of iterations is reached.
 
-### Gradient Descent in Matrix Notation
-
-In matrix notation, the gradient descent update rules can be written as:
-$$\textbf{W} := \textbf{W} - \alpha \frac{\partial L}{\partial \textbf{W}}$$
-$$\textbf{B} := \textbf{B} - \alpha \frac{\partial L}{\partial \textbf{B}}$$
-
-Where $\frac{\partial L}{\partial \textbf{W}}$ and $\frac{\partial L}{\partial \textbf{B}}$ are the gradients of the loss function with respect to the weights and bias, respectively.
-
 ### Choosing the Learning Rate
 
 Choosing the right learning rate $\alpha$ is crucial for the convergence of the gradient descent algorithm. If the learning rate is too small, the algorithm will take tiny steps and converge slowly. If the learning rate is too large, the algorithm might overshoot the minimum and fail to converge.
 
 A common practice is to start with a relatively large learning rate and gradually decrease it as the algorithm progresses. This technique is known as **learning rate annealing**.
 
-
+Here is a demonstration of the Learning Rate and the number of epochs in action:
 
 
 
 <div class="slider-container">
-  <label for="alpha">Alpha:</label>
-  <input type="range" id="alpha" min="-0.1" max="3.1" step="0.1" value="1.5">
-  <span id="alpha-value">1.5</span>
+ <label for="alpha">Alpha:</label>
+ <input type="range" id="alpha" min="-0.1" max="3.1" step="0.1" value="0.4">
+ <span id="alpha-value">0.4</span>
 </div>
 
 <div class="slider-container">
-  <label for="epochs">#Epochs:</label>
-  <input type="range" id="epochs" min="1" max="20" step="1" value="10">
-  <span id="epochs-value">10</span>
+ <label for="epochs">#Epochs:</label>
+ <input type="range" id="epochs" min="1" max="20" step="1" value="10">
+ <span id="epochs-value">10</span>
 </div>
 
-<div id="plot"></div>
-
-
-
-
-
+<div id="fit_plot"></div>
+<div id="loss_plot"></div>
 
 
 ### Types of Gradient Descent
@@ -230,49 +229,195 @@ In today's discussion we have covered the basics of linear regression and gradie
 
 
 
-
 <script>
-    // Get slider elements
-    const alphaSlider = document.getElementById('alpha');
-    const epochsSlider = document.getElementById('epochs');
-    const alphaValue = document.getElementById('alpha-value');
-    const epochsValue = document.getElementById('epochs-value');
 
-    // Initialize Plotly graph (empty for now)
-    Plotly.newPlot('plot', [{
-      x: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      y: [2, 4, 1, 5, 3, 7, 6, 8, 9, 5],
-      type: 'scatter'
-    }], {
-      title: 'Test Data Plot',
-      xaxis: { title: 'X Axis' },
-      yaxis: { title: 'Y Axis' }
-    });
+console.log('Hello from myscript.js');
 
-    // Function to be called when alpha slider is adjusted
-    function foo_alpha(value) {
-        // Implement your logic here
-        console.log('Alpha changed:', value);
-        // Update the graph here
+// Get slider elements
+const alphaSlider = document.getElementById('alpha');
+const epochsSlider = document.getElementById('epochs');
+const alphaValue = document.getElementById('alpha-value');
+const epochsValue = document.getElementById('epochs-value');
+
+
+
+function linspace(start, stop, num) {
+ const step = (stop - start) / (num - 1);
+ return Array.from({ length: num }, (_, i) => start + step * i);
+}
+
+// Helper function for normal distribution
+function normalRandom(mean = 0, stdDev = 1) {
+ let u = 1 - Math.random();
+ let v = Math.random();
+ let z = Math.sqrt(-2.0 * Math.log(u)) * Math.cos(2.0 * Math.PI * v);
+ return z * stdDev + mean;
+}
+
+const N = 1000;
+
+Math.seedrandom(22);
+const x = linspace(0, 1, N);
+const y = x.map(val => val + normalRandom(0, 0.05));
+// console.log(x, y);
+
+
+class MLModel {
+ constructor() {
+  this.num_epochs = 10;
+  this.alpha = 1;
+
+  this.fit_plot = this.createFitPlot();
+  this.loss_plot = this.createLossPlot();
+
+  this.run();
+ }
+
+ createFitPlot() {
+  return Plotly.newPlot('fit_plot', [
+   {
+    x: x,
+    y: y,
+    mode: 'markers',
+    type: 'scatter',
+    name: 'Data'
+   },
+   {
+    mode: 'lines',
+    type: 'scatter',
+    name: 'Fit',
+    line: {
+     width: 4
     }
+   }
+  ], {
+   title: 'Fitting Plot',
+   xaxis: { title: 'x values' },
+   yaxis: { title: 'y values' }
+  });
+ }
 
-    // Function to be called when #epochs slider is adjusted
-    function foo_nep(value) {
-        // Implement your logic here
-        console.log('#Epochs changed:', value);
-        // Update the graph here
+ createLossPlot() {
+
+  let xs = linspace(-1, 3, 100);
+  let ys = xs.map(val => this.loss(y, x.map(x_val => val * x_val)));
+
+  return Plotly.newPlot('loss_plot', [
+   {
+    x: xs,
+    y: ys,
+    name: 'loss terrain',
+    line: {
+     dash: 'dot',
+     // width: 4
     }
+   },
+   {
+    name: 'gradient descent',
+    marker: {
+        // color: 'red', // You can choose any color for the markers
+        size: 6        // Adjust the marker size as needed
+    }
+   }
+  ], {
+   title: 'Loss Plot',
+   xaxis: { title: 'value of m' },
+   yaxis: { title: 'Loss' }
+  });
+ }
 
-    // Event listeners for sliders
-    alphaSlider.addEventListener('input', function() {
-        const value = parseFloat(this.value);
-        alphaValue.textContent = value.toFixed(1);
-        foo_alpha(value);
-    });
+ loss(yTrue, yPred) {
+  if (yTrue.length !== yPred.length) {
+   throw new Error("Arrays must have the same length");
+  }
 
-    epochsSlider.addEventListener('input', function() {
-        const value = parseInt(this.value);
-        epochsValue.textContent = value;
-        foo_nep(value);
-    });
+  const squaredDiffs = yTrue.map((y, i) => Math.pow(y - yPred[i], 2));
+  return squaredDiffs.reduce((sum, diff) => sum + diff, 0) / yTrue.length;
+ }
+
+ run(num_epochs = null, alpha = null) {
+
+  num_epochs = num_epochs || this.num_epochs;
+  alpha = alpha || this.alpha;
+
+  this.num_epochs = num_epochs;
+  this.alpha = alpha;
+
+  console.log(num_epochs, alpha)
+  console.log(this.num_epochs, this.alpha)
+
+  // console.log('Running...');
+
+  this.m = -1;
+  this.ms = [];
+  this.losses = [];
+
+  for (let epoch = 0; epoch <= num_epochs; epoch++) {
+   // Calculate y_pred using map (vector operation)
+   const y_pred = x.map(x_val => this.m * x_val);
+
+   this.ms.push(this.m);
+
+   // Calculate loss (mean squared error)
+   const loss = this.loss(y, y_pred);
+   this.losses.push(loss);
+
+   // Calculate dLdm
+   const xTimesDiff = x.map((x_val, i) => x_val * (y[i] - y_pred[i]));
+   const dLdm = -2 * (xTimesDiff.reduce((sum, val) => sum + val, 0) / x.length);
+
+   // Update m
+   this.m -= alpha * dLdm;
+
+   // Optional: log progress
+   console.log(`Epoch ${epoch + 1}, Loss: ${loss}, m: ${this.m}, dLdm*alpha: ${dLdm * alpha}`);
+  }
+
+
+  this.update_fit_plot();
+  this.update_loss_plot();
+
+ }
+
+ update_fit_plot() {
+  const newData = {
+   x: [x],
+   y: [x.map(val => this.m * val)],
+  }
+  // console.log(newData);
+  Plotly.update("fit_plot", newData, {}, 1);
+ }
+
+
+ update_loss_plot() {
+  // Implement logic to update loss_plot
+  const newData = {
+   x: [this.ms],
+   y: [this.losses],
+  }
+  console.log(newData);
+  Plotly.update("loss_plot", newData, {}, 1);
+ }
+}
+
+
+
+ml = new MLModel();
+
+
+// Event listeners for sliders
+alphaSlider.addEventListener('input', function () {
+ const value = parseFloat(this.value);
+ alphaValue.textContent = value.toFixed(1);
+ console.log("alphaSlider called")
+ ml.run(num_epochs = null, alpha = value);
+});
+
+epochsSlider.addEventListener('input', function () {
+ const value = parseInt(this.value);
+ epochsValue.textContent = value;
+ console.log("epochsSlider called")
+ ml.run(num_epochs = value, alpha = null);
+});
+
 </script>
