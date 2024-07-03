@@ -1,12 +1,12 @@
 ---
 layout: post
-title:  "Linear Regression and Gradient Descent"
+title:  "ML01: Linear Regression and Gradient Descent"
 date:   2024-03-24 18:00:00 +0530
 categories: jekyll update
 author: 'Aritra Mukhopadhyay'
 ---
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
 
 <style>
@@ -134,7 +134,11 @@ One commonly used loss function for regression tasks is the **Mean Squared Error
 
 $$L = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2$$
 
-where $L$ is the loss, $y_i$ is the true output value for the $i^{th}$ example, and $\hat{y}_i = b + w_0x_{i0} + w_1x_{i1} + w_2x_{i2} + \ldots + w_{n-1}x_{i(n-1)}$ is the predicted output value from the model.
+where $$L$$ is the loss, $$y_i$$ is the true output value for the $$i^{th}$$ example, and 
+
+$$\hat{y}_i = b + w_0x_{i0} + w_1x_{i1} + w_2x_{i2} + \ldots + w_{n-1}x_{i(n-1)}$$ 
+
+is the predicted output value from the model.
 Now, let's represent the MSE Loss using matrix notation:
 
 $$L = \frac{1}{m} sum(\textbf{Y} - \hat{\textbf{Y}})^2$$
