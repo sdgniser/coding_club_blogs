@@ -19,6 +19,21 @@ Mission
 Our mission is to foster a vibrant coding community by creating a platform for collaborative learning and knowledge sharing in the field of programming.
 
 
+### Math and Interactive Plots
+
+For future users who write blogs, the MathJax and Plotly scripts have been added already for inline math and interactive plots. You can use MathJax to include mathematical notation in your posts and Plotly to create interactive plots.
+
+#### Example Usage
+
+**MathJax:** To include inline math, use `$...$` for inline math or `$$...$$` for display math.
+
+```markdown
+Inline math: $E = mc^2$
+Display math:
+$$
+\int_0^\infty e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+$$
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
