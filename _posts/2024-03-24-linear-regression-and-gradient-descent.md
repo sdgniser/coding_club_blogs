@@ -6,8 +6,9 @@ categories: jekyll update
 author: 'Aritra Mukhopadhyay'
 ---
 
-<!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>
+
+![Cover Picture]({{site.baseurl}}/assets/img/lrandgd/ml01.png)
 
 <style>
   .slider-container {
