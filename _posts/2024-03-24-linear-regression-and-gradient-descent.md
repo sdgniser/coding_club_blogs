@@ -74,7 +74,7 @@ Now let us make an Assumption:
 
 To put it mathematically, say $f$ is of the form:
 
-$$f(x_0, x_1, x_2, \ldots, x_{n-1}) = b + w_0x_0 + w_1x_1 + w_2x_2 + \ldots + w_nx_n$$
+$$f(x_0, x_1, x_2, \ldots, x_{n-1}) = b + w_0x_0 + w_1x_1 + w_2x_2 + \ldots + w_{n-1}x_{n-1}$$
 
 **Note:** Linear function does not mean that the function is a straight line. Sure, it is a straight line in 2D, but in 3D, it is a ~~straight line~~ plane; in higher dimensions, it is called a hyperplane.
 
@@ -100,7 +100,7 @@ As we move forward with our linear fitting function, it's essential to introduce
 
 To illustrate this concept, let's consider a table. In this table, each row represents an example, the columns contain feature values, and the last column contains the ground truth output value. The table looks like this:
 
-| $x_0$ | $x_1$ | $x_2$ | ... | $x_{n-1}$ | y |
+| $x_0$ | $x_1$ | $x_2$ | ... | $x_{n-1}$ | $y$ |
 |:---:|:---:|:---:|:---:|:---:|:---:|
 | 1.2 | 3.4 | 5.6 | ... | 2.4 | 1.5 |
 | 7.8 | 9.0 | 11.2 | ... | 4.2 | 0.9 |
@@ -158,7 +158,7 @@ Now, we have the loss function, which is a measure of how good the fit is. And w
 
 Now, to find the minima of a function, we generally use techniques like maxima-minima, where we set the function's derivative to zero and solve for the variables $W$ and $B$. We could have very well taken the same route here. And it might have worked too. But there is a subtle issue with that approach.
 
-Maxima minima requires us to equate the derivative of the function to zero and solve for the variables. The most efficient ways of solving such systems of linear equations on a computer generally involve inverting matrices. Matrix inversion is computationally intensive, especially for large matrices. The computational complexity of inverting an \( n \times n \) matrix is \( O(n^3) \), which becomes impractical for huge models and datasets. Additionally, matrix inversion can be numerically unstable if \( X^T X \) is not well-conditioned (i.e., it has a large condition number).
+Maxima minima requires us to equate the derivative of the function to zero and solve for the variables. The most efficient ways of solving such systems of linear equations on a computer generally involve inverting matrices. Matrix inversion is computationally intensive, especially for large matrices. The computational complexity of inverting an $n \times n$ matrix is $O(n^3)$, which becomes impractical for huge models and datasets. Additionally, matrix inversion can be numerically unstable if $X^T X$ is not well-conditioned (i.e., it has a large condition number).
 
 Below is a comparison of Gradient Descent and Maxima-Minima, the pros and cons of each approach:
 
