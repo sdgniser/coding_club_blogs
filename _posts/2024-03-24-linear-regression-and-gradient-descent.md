@@ -35,6 +35,8 @@ author: 'Aritra Mukhopadhyay'
   - [Gradient Descent Algorithm](#gradient-descent-algorithm)
   - [Choosing the Learning Rate](#choosing-the-learning-rate)
   - [Types of Gradient Descent](#types-of-gradient-descent)
+  - [Demonstration Code](#demonstration-code)
+
 
 
 Although this will be a walk through the concept of Linear Regression, mainly from the point of view of Machine Learning, we will also touch upon the mathematical aspects of it and its uses in Statistical data analysis (which is primarily relevant to our lab experiments).
@@ -51,9 +53,7 @@ Let us take an example, and the idea will be more transparent. Suppose the task 
 
 So, we have a lot of factors that influence our decisions. Our decision is going to be based on these factors. We can say that our decision would be a function of these factors.
 
-$$
-\text{decision} = f(factor_0, factor_1, factor_2, ...)
-$$
+$$\text{decision} = f(factor_0, factor_1, factor_2, ...)$$
 
 Given the value of these factors, if we have the function, we can easily make the decision. Now, to actually do it, we have to express (encode) all these factors in terms of some numbers.
 
@@ -134,7 +134,11 @@ One commonly used loss function for regression tasks is the **Mean Squared Error
 
 $$L = \frac{1}{m} \sum_{i=1}^{m} (y_i - \hat{y}_i)^2$$
 
-where $$L$$ is the loss, $$y_i$$ is the true output value for the $$i^{th}$$ example, and $\hat{y}_i = b + w_0x_{i0} + w_1x_{i1} + w_2x_{i2} + \ldots + w_{n-1}x_{i(n-1)}$ is the predicted output value from the model.
+where $L$ is the loss, $y_i$ is the true output value for the $i^{th}$ example, and
+
+$$\hat{y}_i = b + w_0x_{i0} + w_1x_{i1} + w_2x_{i2} + \ldots + w_{n-1}x_{i(n-1)}$$
+
+is the predicted output value from the model.
 Now, let's represent the MSE Loss using matrix notation:
 
 $$L = \frac{1}{m} sum(\textbf{Y} - \hat{\textbf{Y}})^2$$
@@ -187,10 +191,10 @@ The gradient descent algorithm involves the following steps:
 2. **Compute the Loss:** Calculate the Loss after passing the data through the model.
 3. **Compute the Gradient**: Calculate the gradient of the loss function with respect to the weights $W$ and the bias $B$.
 4. **Update the Parameters**: Update the weights $W$ and the bias $B$ by moving in the direction opposite to the gradient. This can be done using the following update rules:
-  $$W := W - \alpha \frac{\partial L}{\partial W}$$
-  $$B := B - \alpha \frac{\partial L}{\partial B}$$
+  $W := W - \alpha \frac{\partial L}{\partial W},$
+  $B := B - \alpha \frac{\partial L}{\partial B}$
   where $\alpha$ is the learning rate, a small positive number that controls the step size.
-5. **Repeat**: Repeat steps 2 and 3 until the loss function converges to a minimum value or until a certain number of iterations is reached.
+5. **Repeat**: Repeat steps 2 to 4 until the loss function converges to a minimum value.
 
 ### Choosing the Learning Rate
 
@@ -227,19 +231,19 @@ There are several variants of gradient descent, each with their own trade-offs:
 2. **Stochastic Gradient Descent (SGD)**: Sees each training example to calculate the loss and update the weights (take one step). This can be much faster but introduces more noise in the gradient estimates. This is because one example may not represent the whole dataset well.
 3. **Mini-Batch Gradient Descent**: Divides the dataset into batches and updates the gradient after seeing each batch. Passing through all the batches and seeing the whole dataset once is called an epoch. This strikes a balance between the efficiency of SGD and the accuracy of batch gradient descent.
 
-In today's discussion, we have covered the basics of linear regression and gradient descent. We also touched on but chose to leave out specific topics in detail, like the types of gradient descent, how to handle classification tasks, the coding aspect of it, etc. We will cover these topics in future discussions.
-
 ### Demonstration Code
 
+Here is a demonstration of the Linear Regression and Gradient Descent algorithm in action. You can adjust the learning rate and the number of epochs to see how the model fits the data.
 
 <a href="https://colab.research.google.com/drive/12zuYGh_IN1BEqzInu81SPUJ_nwCsHoaK" target="_blank">
     <img alt="Open In Colab" src="https://colab.research.google.com/assets/colab-badge.svg"
-    style="display: block; margin-left: auto; margin-right: auto; width: 150px"
-    >
+    style="display: block; margin-left: auto; margin-right: auto; width: 150px">
 </a>
 
 
 <script src="https://gist.github.com/PeithonKing/12f51e7e2341884d46bebe38fa84b1f5.js"></script>
+
+In today's discussion, we have covered the basics of linear regression and gradient descent along with the coding aspect of it. We also touched on but chose to leave out specific topics in detail, like the types of gradient descent, how to handle classification tasks etc. We will cover these topics in future discussions.
 
 
 <script>
