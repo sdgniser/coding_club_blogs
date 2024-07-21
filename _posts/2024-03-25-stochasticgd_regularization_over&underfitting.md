@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[ML02] Other Loss Functions: Stochastic Gradient Descent, Regularization"
-date:   2024-08-1 18:00:00 +0530
+date:   2024-03-25 18:00:00 +0530
 categories: blogs
 author: 'Aritra Mukhopadhyay'
 ---
