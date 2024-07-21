@@ -2,7 +2,7 @@
 layout: post
 title:  "[ML01] Introduction: Linear Regression and Gradient Descent"
 date:   2024-03-24 18:00:00 +0530
-categories: jekyll update
+categories: blogs
 author: 'Aritra Mukhopadhyay'
 ---
 
@@ -32,8 +32,6 @@ author: 'Aritra Mukhopadhyay'
   - [Gradient Descent Algorithm](#gradient-descent-algorithm)
   - [Choosing the Learning Rate](#choosing-the-learning-rate)
   - [Types of Gradient Descent](#types-of-gradient-descent)
-
-
 
 
 Although this will be a walk through the concept of Linear Regression, mainly from the point of view of Machine Learning, we will also touch upon the mathematical aspects of it and its uses in Statistical data analysis (which is primarily relevant to our lab experiments).
@@ -189,7 +187,7 @@ The gradient descent algorithm involves the following steps:
   $$W := W - \alpha \frac{\partial L}{\partial W}$$
   $$B := B - \alpha \frac{\partial L}{\partial B}$$
   where $\alpha$ is the learning rate, a small positive number that controls the step size.
-4. **Repeat**: Repeat steps 2 and 3 until the loss function converges to a minimum value or until a certain number of iterations is reached.
+5. **Repeat**: Repeat steps 2 and 3 until the loss function converges to a minimum value or until a certain number of iterations is reached.
 
 ### Choosing the Learning Rate
 

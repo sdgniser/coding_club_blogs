@@ -2,7 +2,7 @@
 layout: post
 title:  "Git & GitHub: An Invitation to Version Control"
 date:   2024-01-12 18:00:00 +0530
-categories: jekyll update
+categories: blogs
 author: 'Jyotirmaya Shivottam'
 ---
 

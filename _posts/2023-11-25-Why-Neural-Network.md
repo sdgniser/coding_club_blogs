@@ -2,7 +2,7 @@
 layout: post
 title:  "Why Neural Network"
 date:   2023-11-25 
-categories: jekyll update
+categories: blogs
 author: 'Shriman Keshri'
 ---
 

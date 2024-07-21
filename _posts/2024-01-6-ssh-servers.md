@@ -2,7 +2,7 @@
 layout: post
 title:  "Remote Devlopment on SSH Servers"
 date:   2024-01-06 
-categories: jekyll update
+categories: blogs
 author: 'Sagar Prakash Barad'
 ---
 
