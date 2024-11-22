@@ -35,6 +35,9 @@ layout: base
         {%- if site.show_excerpts -%}
           {{ post.excerpt }}
         {%- endif -%}
+        {%- if post.abstract -%}
+          <p class="post-abstract">{{ post.abstract }}</p>
+        {%- endif -%}
       </li>
       {%- endfor -%}
     </ul>
