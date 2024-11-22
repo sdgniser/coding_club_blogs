@@ -4,6 +4,7 @@ title:  "Git & GitHub: An Invitation to Version Control"
 date:   2024-01-12 18:00:00 +0530
 categories: blogs
 author: 'Jyotirmaya Shivottam'
+abstract: "This blogpost is a slightly expanded conversion of a talk, I gave to the students of CS460/CS660 at NISER, Bhubaneswar, on January 12, 2024. It is a tutorial-style introduction to Git & GitHub, and how to use them for version control. This blogpost / talk is meant for beginners, and assumes no prior knowledge of Git or GitHub. It is also meant to be interactive, so that the readers can follow along and try out the git commands themselves."
 ---
 
 <style>

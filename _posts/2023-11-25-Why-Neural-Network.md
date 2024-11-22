@@ -4,6 +4,7 @@ title:  "Why Neural Network"
 date:   2023-11-25 
 categories: blogs
 author: 'Shriman Keshri'
+abstract: "We want to build an intelligent system. But why neural networks? In this, we will explore the concept of universal approximation, which states that neural networks can theoretically approximate any function, given enough hidden units and a suitable activation function."
 ---
 
 # Neural Networks and ReLU

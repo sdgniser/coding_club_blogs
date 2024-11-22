@@ -4,6 +4,7 @@ title:  "[ML01] Introduction: Linear Regression and Gradient Descent"
 date:   2024-03-24 18:00:00 +0530
 categories: blogs
 author: 'Aritra Mukhopadhyay'
+abstract: "This post introduces the foundational concepts of Machine Learning, focusing on Linear Regression and Gradient Descent. It covers key ideas such as curve fitting, the mathematical formulation of linear regression, loss functions, and the gradient descent algorithm for optimizing model parameters. The post also includes an intuitive explanation of how gradient descent works and practical demonstrations of its application in machine learning tasks."
 ---
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.5/seedrandom.min.js"></script>

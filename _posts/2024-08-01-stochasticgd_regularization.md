@@ -4,6 +4,7 @@ title:  "[ML02] Other Loss Functions: Stochastic Gradient Descent, Regularizatio
 date:   2024-08-01 18:00:00 +0530
 categories: blogs
 author: 'Aritra Mukhopadhyay'
+abstract: "In this post, we explore stochastic gradient descent (SGD), an efficient optimization method for large datasets, and introduce cross-entropy loss for classification tasks. We also cover regularization to prevent overfitting and improve model generalization. These techniques build on our previous work with linear regression, helping you choose the right loss function and optimization strategy for different machine learning tasks."
 ---
 
 <script src="https://www.desmos.com/api/v1.9/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6"></script>
