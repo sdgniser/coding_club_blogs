@@ -56,6 +56,10 @@ markdown: kramdown
 #   - vendor/gems/
 #   - vendor/ruby/
 
+collections:
+  rosalind:
+    output: true
+
 
 
 defaults:
