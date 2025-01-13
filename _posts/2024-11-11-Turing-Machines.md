@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Turing Machines"
+title:  "[CnC02] Turing Machines"
 date:   2024-08-17
 categories: blogs
 author: 'Harisankar B'
