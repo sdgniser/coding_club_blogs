@@ -6,7 +6,7 @@ permalink: /problems/computing-gc-content/
 date: 2025-01-12
 ---
 
-# Problem
+## Problem
 
 The GC-content of a DNA string is given by the percentage of symbols in the string that are 'C' or 'G'. For example, the GC-content of "AGCTATAG" is 37.5%. Note that the reverse complement of any DNA string has the same GC-content.
 
@@ -14,17 +14,17 @@ DNA strings must be labeled when they are consolidated into a database. A common
 
 In Rosalind's implementation, a string in FASTA format will be labeled by the ID "Rosalind_xxxx", where "xxxx" denotes a four-digit code between 0000 and 9999.
 
-### Given
+## Given
 
 At most 10 DNA strings in FASTA format (of length at most 1 kbp each).
 
-### Return
+## Return
 
 The ID of the string having the highest GC-content, followed by the GC-content of that string. Rosalind allows for a default error of 0.001 in all decimal answers unless otherwise stated; please see the note on absolute error below.
 
-### Sample Dataset
+## Sample Dataset
 
-```
+```python
 >Rosalind_6404
 CCTGCGGAAGATCGGCACTAGAATAGCCAGAACCGTTTCTCTGAGGCTTCCGGCCTTCCC
 TCCCACTAATAATTCTGAGG
@@ -36,14 +36,14 @@ CCACCCTCGTGGTATGGCTAGGCATTCAGGAACCGGAGAACGCTTCAGACCAGCCCGGAC
 TGGGAACCTGCGGGCAGTAGGTGGAAT
 ```
 
-### Sample Output
+## Sample Output
 
-```
+```plaintext
 Rosalind_0808
 60.919540
 ```
 
-# Solution
+## Solution
 
 ```python
 def read_fasta(file):
