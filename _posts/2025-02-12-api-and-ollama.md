@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Learning about APIs using Ollama"
-date:   2025-02-11 19:00:00 +0530
+date:   2025-02-12 19:00:00 +0530
 categories: blogs
 author: 'Aritra Mukhopadhyay'
 abstract: "Introduction to APIs through the Ollama API and besides learning about the basics of API usage, also learning about how to include LLM output in any program."
