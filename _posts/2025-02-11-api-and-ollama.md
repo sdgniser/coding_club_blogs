@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Learning about APIs using Ollama"
-date:   2025-02-10 19:00:00 +0530
+date:   2025-02-11 19:00:00 +0530
 categories: blogs
 author: 'Aritra Mukhopadhyay'
 abstract: "Introduction to APIs through the Ollama API and besides learning about the basics of API usage, also learning about how to include LLM output in any program."
@@ -12,10 +12,9 @@ abstract: "Introduction to APIs through the Ollama API and besides learning abou
 <!-- ![Cover Picture](../assets/img/api_ollama/2024-12-10_21-28-35_2124.png) -->
 
 
-
 In today's digital landscape, APIs have become the backbone of modern software development. Meanwhile, Large Language Models (LLMs) have revolutionized natural language processing. LLMs like OpenAI's ChatGPT, Anthropic's Claude, and Google's Gemini are changing the way we interact with technology. In this blog post, we'll explore APIs through the example of Ollama API, which allows us to generate LLM completions *locally*. This gives us privacy and more control over our data. By using Ollama, we can unlock the power of LLMs right on our own machines, without relying on external servers. Here is a brief outline of what we will cover in this blog post:
 
-- [What is an API?](#what-is-an-api)- [What is an API?](#what-is-an-api)- [What is an API?](#what-is-an-api)
+- [What is an API?](#what-is-an-api)
 - [Ollama API](#ollama-api)
   - [Installing Ollama](#installing-ollama)
   - [Running Ollama Server](#running-ollama-server)
